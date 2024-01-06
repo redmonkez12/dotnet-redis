@@ -1,8 +1,13 @@
-﻿namespace RedisAPI.Models;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace RedisAPI.Models;
 
 public class Platform
 {
-    public int Id { get; set; }
+    [Required]
+    public string Id { get; set; } = $"platform:{Guid.NewGuid().ToString()}";
 
+    [Required]
     public string Name { get; set; } = string.Empty;
 }
